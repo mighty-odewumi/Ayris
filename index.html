@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Ayris Beauty Machine - Login</title>
+  <style>
+    input {
+      padding: 10px;
+      background: transparent;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="img-wrapper">
+    <img src="/assets/login-img.png" alt="login" usemap="#login">
+    <map name="login">
+      <area shape="rect" coords="254, 425, 359, 443" href="home.html" alt="home">
+      <area shape="rect" coords="568, 574, 630, 592" href="home.html" alt="search">
+    </map>
+  </div> -->
+
+  <div style="position: relative; width: 100%; height: auto;">
+    <img src="/assets/login-img-bg-edit1.png" usemap="#header-map" alt="Header Image" style="width: 100%">
+    <map name="header-map">
+      <area shape="rect" coords="254, 425, 359, 443" href="home.html" alt="home">
+      <area shape="rect" coords="568, 574, 630, 592" href="home.html" alt="search">
+      <area shape="rect" coords="390, 200, 477, 250" href="" alt="" id="login-area">
+    </map>
+
+    <form id="loginForm" style="position: absolute; top: 108px; left: 244px; width: 100%; height: 100vh; padding: 10px; border-radius: 5px; background: url(assets/middle-bg-edit1.png) no-repeat; align-items: center; ">
+      <input type="text" id="username" name="username"  required  style="display: block; width: 80px; margin-top: 84px; margin-left: 133px; padding: 10px 4px; color: #fff">
+      
+      <input type="password" id="password" name="password" placeholder="" required  style="display: block; width: 80px; margin-bottom: 10px; margin-top: 104px; margin-left: 132px; color: #fff">
+      
+      <!-- <button type="submit" style="width: 100%; background: #333; color: #fff; border: none; padding: 8px; cursor: pointer;">Login</button> -->
+    </form>
+  </div>
+  
+  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.onload = () => imageMapResize();
+</script>
+
+<script>
+  window.onload = () => {
+    imageMapResize();
+    const image = document.querySelector("img");
+    const form = document.getElementById("loginForm");
+
+    function positionForm() {
+      const rect = image.getBoundingClientRect();
+      form.style.top = rect.top + 108 + "px";
+      form.style.left = rect.left + 244 + "px";
+    }
+
+    positionForm();
+    window.addEventListener("resize", positionForm);
+  };
+
+</script>
+</html> 
